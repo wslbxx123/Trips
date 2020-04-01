@@ -2,6 +2,7 @@ import React from 'react'
 import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { Trips } from '../components/Trip/Trips'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 
 const { mount } = Enzyme
 
@@ -29,4 +30,16 @@ describe('<Trips />', function () {
     const getSpy = jest.spyOn(props, 'getAllTrips');
     expect(getSpy).toBeCalled();
   })
+})
+
+test('load and display as snapshot', async() => {
+  const props = {
+    getAllTrips: jest.fn(),
+    trips: {
+      loading: false
+    }
+  };
+  const { asFragment } = render(<Trips {...props}/>)
+
+  expect(asFragment()).toMatchSnapshot()
 })

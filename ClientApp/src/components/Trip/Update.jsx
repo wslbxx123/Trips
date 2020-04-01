@@ -15,8 +15,8 @@ export class Update extends Component {
         this.state = {
             name: '',
             description: '',
-            dateStarted: null,
-            dateCompleted: null
+            dateStarted: "",
+            dateCompleted: ""
         }
     }
 

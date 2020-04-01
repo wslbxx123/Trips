@@ -29,5 +29,11 @@ module.exports = {
           "code": 200,
           "data": {}
       })
+  },
+  put: () => {
+    return Promise.resolve({
+        "code": 200,
+        "data": {}
+    })
   }
 };

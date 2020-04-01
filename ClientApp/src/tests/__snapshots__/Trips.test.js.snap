@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`load and display as snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      All trips
+    </h1>
+    <p>
+      Here you can see all trips
+    </p>
+    0
+  </div>
+</DocumentFragment>
+`;
