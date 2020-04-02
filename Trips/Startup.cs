@@ -6,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Trips.BLL.Services;
+using Trips.Application.Services;
 using Trips.Core.Settings;
+using Trips.Infrastructure.Repository;
 
 namespace Trips
 {
@@ -38,6 +39,7 @@ namespace Trips
             });
 
             services.AddTransient<ITripService, TripService>();
+            services.AddTransient<ITripRepository, TripRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

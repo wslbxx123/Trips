@@ -1,6 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Trips.BLL.Services;
+using Trips.Application.Services;
 using Trips.Core.Entities;
 
 namespace Trips.Controllers

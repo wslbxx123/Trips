@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Trips.Core.Entities;
 
-namespace Trips.BLL.Services
+namespace Trips.Infrastructure.Repository
 {
-    public interface ITripService
+    public interface ITripRepository
     {
         List<Trip> GetAllTrips();
         Trip GetTripById(string tripId);

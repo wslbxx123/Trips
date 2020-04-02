@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Trips.Common\Trips.Core.csproj" />
+    <ProjectReference Include="..\Trips.Infrastructure\Trips.Infrastructure.csproj" />
+    <ProjectReference Include="..\Trips.Core\Trips.Core.csproj" />
   </ItemGroup>
 
 </Project>

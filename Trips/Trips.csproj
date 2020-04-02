@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -22,8 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Trips.BLL\Trips.Infrastructure.csproj" />
-    <ProjectReference Include="..\Trips.Common\Trips.Core.csproj" />
+    <ProjectReference Include="..\Trips.Application\Trips.Application.csproj" />
+    <ProjectReference Include="..\Trips.Infrastructure\Trips.Infrastructure.csproj" />
+    <ProjectReference Include="..\Trips.Core\Trips.Core.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

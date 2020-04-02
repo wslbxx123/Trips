@@ -1,16 +1,15 @@
 ﻿using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
 using Trips.Core.Entities;
 using Trips.Core.Settings;
 
-namespace Trips.BLL.Services
+namespace Trips.Infrastructure.Repository
 {
-    public class TripService : ITripService
+    public class TripRepository : ITripRepository
     {
         private readonly IMongoCollection<Trip> _trips;
 
-        public TripService(ITripDatabaseSettings settings)
+        public TripRepository(ITripDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
