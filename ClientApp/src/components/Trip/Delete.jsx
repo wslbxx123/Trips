@@ -1,68 +1,55 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-export class Delete extends Component {
-    constructor(props) {
-        super(props);
+export function Delete(props) {
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [dateStarted, setDateStarted] = useState(null);
+    const [dateCompleted, setDateCompleted] = useState(null);
 
-        this.onCancel = this.onCancel.bind(this);
-        this.onConfirmation = this.onConfirmation.bind(this);
-
-        this.state = {
-            name: "",
-            description: "",
-            dateStarted: null,
-            dateCompleted: null
-        }
-    }
-
-    componentDidMount() {
-        const {id} = this.props.match.params;
+    useEffect(() => {
+        const {id} = props.match.params;
 
         axios.get("api/Trip/GetTrip/"+id).then(trip => {
             const response = trip.data;
 
-            this.setState({
-                name: response.name,
-                description: response.description,
-                dateStarted: new Date(response.dateStarted).toISOString().slice(0,10),
-                dateCompleted: response.dateCompleted ? new Date(response.dateCompleted).toISOString().slice(0, 10) : null
-            })
+            setName(response.name);
+            setDescription(response.description);
+            setDateStarted(new Date(response.dateStarted).toISOString().slice(0,10));
+            setDateCompleted(response.dateCompleted ? new Date(response.dateCompleted).toISOString().slice(0, 10) : null);
         });
-    }
+    });
 
-    onCancel(e) {
+    function onCancel(e) {
         const {history} = this.props;
-
+    
         history.push("/trips");
     }
-
-    onConfirmation(e) {
-        const {id} = this.props.match.params;
-        const {history} = this.props;
-
+    
+    function onConfirmation(e) {
+        const {id} = props.match.params;
+        const {history} = props;
+    
         axios.delete("/api/Trip/DeleteTrip/" + id).then(result => {
             history.push("/trips");
         });
     }
 
-    render() {
-        return (
-            <div style={{marginTop: 10}}>
-                <h2>Delete trip confirmation</h2>
-                <div className="card">
-                    <div className="card-body">
-                        <h4 className="card-title">{this.state.name}</h4>
-                        <p className="card-text">{this.state.description}</p>
-                        <button onClick={this.onCancel} className="btn btn-default">
-                            Cancel
-                        </button>
-                        <button onClick={this.onConfirmation} className="btn btn-danger">
-                            Confirm
-                        </button>
-                    </div>
+    return (
+        <div style={{marginTop: 10}}>
+            <h2>Delete trip confirmation</h2>
+            <div className="card">
+                <div className="card-body">
+                    <h4 className="card-title">{name}</h4>
+                    <p className="card-text">{description}</p>
+                    <button onClick={onCancel} className="btn btn-default">
+                        Cancel
+                    </button>
+                    <button onClick={onConfirmation} className="btn btn-danger">
+                        Confirm
+                    </button>
                 </div>
             </div>
-        );
-    }
+        </div>
+    ); 
 }
