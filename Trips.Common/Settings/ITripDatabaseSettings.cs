@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Trips.Common.Models
+﻿
+namespace Trips.Core.Settings
 {
     public interface ITripDatabaseSettings
     {

@@ -47,12 +47,11 @@ export class Create extends Component {
         e.preventDefault();
         const {history} = this.props;
 
-        let tripObject = {
-            Id: Math.floor(Math.random() * 1000), 
+        let tripObject = { 
             name: this.state.name,
             description: this.state.description,
-            dateStarted: this.state.dateStarted,
-            dateCompleted: this.state.dateCompleted
+            dateStarted: new Date(this.state.dateStarted).toISOString(),
+            dateCompleted: this.state.dateCompleted ? new Date(this.state.dateCompleted).toISOString() : null
         }
 
         axios.post("api/Trips/AddTrip", tripObject).then(result => {

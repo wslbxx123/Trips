@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Trips.Common.Models;
+﻿using System.Collections.Generic;
+using Trips.Core.Entities;
 
 namespace Trips.BLL.Services
 {

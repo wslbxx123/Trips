@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Trips.BLL\Trips.BLL.csproj" />
-    <ProjectReference Include="..\Trips.Common\Trips.Common.csproj" />
+    <ProjectReference Include="..\Trips.BLL\Trips.Infrastructure.csproj" />
+    <ProjectReference Include="..\Trips.Common\Trips.Core.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

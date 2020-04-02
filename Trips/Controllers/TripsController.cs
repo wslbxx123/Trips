@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using Trips.BLL.Services;
-using Trips.Common.Models;
+using Trips.Core.Entities;
 
 namespace Trips.Controllers
 {

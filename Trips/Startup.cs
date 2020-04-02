@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Trips.BLL.Services;
-using Trips.Common.Models;
+using Trips.Core.Settings;
 
 namespace Trips
 {

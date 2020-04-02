@@ -1,10 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Trips.Common.Models
+namespace Trips.Core.Entities
 {
     public class Trip
     {

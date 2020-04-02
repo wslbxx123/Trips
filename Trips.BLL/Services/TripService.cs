@@ -1,7 +1,8 @@
 ﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using Trips.Common.Models;
+using Trips.Core.Entities;
+using Trips.Core.Settings;
 
 namespace Trips.BLL.Services
 {

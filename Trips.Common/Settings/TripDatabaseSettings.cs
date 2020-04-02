@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Trips.Common.Models
+namespace Trips.Core.Settings
 {
     public class TripDatabaseSettings : ITripDatabaseSettings
     {
