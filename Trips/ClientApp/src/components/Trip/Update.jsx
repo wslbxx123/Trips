@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 
 export class Update extends Component {
     constructor(props) {
@@ -83,57 +87,62 @@ export class Update extends Component {
 
     render() {
         return (
-            <div className="trip-form" >
-                <h3>Add new trip</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Trip name: </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={this.state.name}
-                            onChange={this.onChangeName}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Trip description: </label>
-                        <textarea
-                            type="text"
-                            className="form-control"
-                            value={this.state.description}
-                            onChange={this.onChangeDescription}
-                        />
-                    </div>
-                    <div className="row">
-                        <div className="col col-md-6 col-sm-6 col-xs-12">
+            <div>
+                <Card>
+                    <CardImg top width="100%" src="/assets/country_scene_redone.svg" alt="Card image cap" />
+                    <CardBody>
+                        <CardTitle>Update the trip</CardTitle>
+                        <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                <label>Date of start: </label>
+                                <label>Trip name: </label>
                                 <input
-                                    type="date"
+                                    type="text"
                                     className="form-control"
-                                    value={this.state.dateStarted}
-                                    onChange={this.onChangeDateStarted}/>
+                                    value={this.state.name}
+                                    onChange={this.onChangeName}
+                                />
                             </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col col-md-6 col-sm-6 col-xs-12">
                             <div className="form-group">
-                                <label>Date of complete: </label>
-                                <input
-                                    type="date"
+                                <label>Trip description: </label>
+                                <textarea
+                                    type="text"
                                     className="form-control"
-                                    value={this.state.dateCompleted}
-                                    onChange={this.onChangeDateCompleted}/>
+                                    value={this.state.description}
+                                    onChange={this.onChangeDescription}
+                                />
                             </div>
-                        </div>
-                    </div>
+                            <div className="row">
+                                <div className="col col-md-6 col-sm-6 col-xs-12">
+                                    <div className="form-group">
+                                        <label>Date of start: </label>
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            value={this.state.dateStarted}
+                                            onChange={this.onChangeDateStarted}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col col-md-6 col-sm-6 col-xs-12">
+                                    <div className="form-group">
+                                        <label>Date of complete: </label>
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            value={this.state.dateCompleted}
+                                            onChange={this.onChangeDateCompleted}/>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div className="form-group">
-                        <button onClick={this.onUpdateCancel} className="btn btn-default">Cancel</button>
-                        <button type="submit" className="btn btn-success">Update</button>
-                    </div>
-                </form>
+                            <div className="form-group">
+                                <Button onClick={this.onUpdateCancel} outline color="default">Cancel</Button>
+                                <Button type="submit" outline color="success">Update</Button>
+                            </div>
+                        </form>
+                    </CardBody>
+                </Card>
             </div>
         )
     }

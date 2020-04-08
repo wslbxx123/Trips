@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Button } from 'reactstrap';
 
 export class Create extends Component {
     constructor(props) {
@@ -108,9 +109,10 @@ export class Create extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" 
-                            value="Add trip" 
-                            className="btn btn-primary"/>
+                        <Button type="submit"
+                            outline color="primary">
+                                Add trip
+                        </Button>
                     </div>
                 </form>
             </div>

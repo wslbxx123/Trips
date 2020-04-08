@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+import './Trip.css';
 
 export function Delete(props) {
     const [name, setName] = useState('');
@@ -38,18 +43,19 @@ export function Delete(props) {
     return (
         <div style={{marginTop: 10}}>
             <h2>Delete trip confirmation</h2>
-            <div className="card">
-                <div className="card-body">
-                    <h4 className="card-title">{name}</h4>
-                    <p className="card-text">{description}</p>
-                    <button onClick={onCancel} className="btn btn-default">
+            <Card className="card">
+                <CardImg top width="100%" src="/assets/country_scene_redone.svg" alt="Card image cap" />
+                <CardBody>
+                    <CardTitle>{name}</CardTitle>
+                    <CardText>{description}</CardText>
+                    <Button onClick={onCancel} outline color="default">
                         Cancel
-                    </button>
-                    <button onClick={onConfirmation} className="btn btn-danger">
+                    </Button>
+                    <Button onClick={onConfirmation} outline color="danger">
                         Confirm
-                    </button>
-                </div>
-            </div>
+                    </Button>
+                </CardBody>
+            </Card>
         </div>
     ); 
 }

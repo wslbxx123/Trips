@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getAllTrips} from '../../actions/tripActions';
+import { Button } from 'reactstrap';
+
 export class Trips extends Component
 {
     constructor(props){
@@ -62,12 +64,12 @@ export class Trips extends Component
                             <td>{trip.dateCompleted ? new Date(trip.dateCompleted).toLocaleDateString() :  '-' }</td>
                             <td>
                                 <div className="form-group">
-                                    <button onClick={() => this.onTripUpdate(trip.id)} className="btn btn-success">
+                                    <Button onClick={() => this.onTripUpdate(trip.id)} outline color="success">
                                         Update
-                                    </button>
-                                    <button onClick={() => this.onTripDelete(trip.id)} className="btn btn-danger">
+                                    </Button>
+                                    <Button onClick={() => this.onTripDelete(trip.id)} outline color="danger">
                                         Delete
-                                    </button>
+                                    </Button>
                                 </div>
                             </td>
                         </tr>
